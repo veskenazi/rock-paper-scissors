@@ -1,68 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock, paper, scissors</title>
-</head>
-<body>
-    <script>
-
-        const computerPlay = () => options[Math.floor(Math.random() * options.length)];
-
-        const playerPlay = () => {
-            let playerSelection;
-            do {
-                playerSelection = prompt("Rock, Paper or Scissors ?");
-                playerSelection = playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase();
-            } while (playerSelection != "Rock" && playerSelection != "Paper" && playerSelection != "Scissors");
-            return playerSelection;
-        }
-
-        const playRound = (playerSelection, computerSelection) => {
-            let result;
-            if (playerSelection === "Rock" && computerSelection === "Scissors" || 
-                playerSelection === "Paper" && computerSelection === "Rock" || 
-                playerSelection === "Scissors" && computerSelection === "Paper") {
-                    result = `You: ${playerSelection} vs Computer: ${computerSelection} -- You win !`;
-                    playerPoints++;
-            } else if (
-                playerSelection === "Rock" && computerSelection === "Paper" ||
-                playerSelection === "Paper" && computerSelection === "Scissors" ||
-                playerSelection === "Scissors" && computerSelection === "Rock") {
-                    result = `You: ${playerSelection} vs Computer: ${computerSelection} -- You lose !`;
-                    computerPoints++;
-            } else {
-                    result = `You: ${playerSelection} vs Computer: ${computerSelection} -- It's a tie !`;
-            }
-            return result;
-        }
-
-        const game = () => {
-            let score;
-            for (let i = 0 ; i < 5 ; i++) {
-            let computerSelection = computerPlay();
-            let playerSelection = playerPlay();
-            console.log(playRound(playerSelection, computerSelection));
-            }
-            console.log("Game is over !");
-            switch(true) {
-                case (playerPoints > computerPoints):
-                    score = `You: ${playerPoints} vs Computer: ${computerPoints} -- You win !`;
-                    break;
-                case (playerPoints < computerPoints):
-                    score = `You: ${playerPoints} vs Computer: ${computerPoints} -- You lose !`;
-                    break;
-                default:
-                    score = `You: ${playerPoints} vs Computer: ${computerPoints} -- It's a tie !`;
-            }
-            return score;
-        }
-
-        let options = ["Rock", "Paper", "Scissors"];
-        let playerPoints = 0;
-        let computerPoints = 0;
-        console.log(game());
-    </script>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Rock, Paper, Scissors</title>
+	</head>
+	<body>
+		<div id="container">
+			<h1>Rock, paper, scissors</h1>
+			<div class="gameRow">
+				<div class="gameCol">
+					<h2>You</h2>
+					<div class="score">
+						<span id="userScore">0</span>
+					</div>
+					<div class="selection">
+						<span id="userSelection">Your selection: </span>
+					</div>
+				</div>
+				<div class="gameCol">
+					<h2>Computer</h2>
+					<div class="score">
+						<span id="computerScore">0</span>
+					</div>
+					<div class="selection">
+						<span id="computerSelection">Computer selection: </span>
+					</div>
+				</div>
+			</div>
+			<div class="detailRow">
+				<p id="rules">Select rock, paper or scissors.</p>
+				<button id="reset">Replay ?</button>
+			</div>
+			<div class="choiceRow">
+				<div class="choice">
+					<img id="rock" src="img/rock.png" alt="Rock">
+				</div>
+				<div class="choice">
+					<img id="paper" src="img/paper.png" alt="Paper">
+				</div>
+				<div class="choice">
+					<img id="scissors" src="img/scissors.png" alt="Scissors">
+				</div>
+			</div>
+		</div>
+		<script src="js/script.js"></script>
+	</body>
 </html>

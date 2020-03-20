@@ -1,0 +1,113 @@
+body {
+	font-family: 'Trebuchet MS', sans-serif;
+	background-color: #eee;
+	color: #222;
+}
+
+#container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 42px;
+	text-transform: capitalize;
+	text-align: center;
+	margin: 24px auto;
+}
+
+.gameRow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 24px auto;
+}
+
+.gameCol {
+	min-width: 200px;
+	text-align: center;
+	vertical-align: middle;
+	margin: 0 12px;
+}
+
+.gameCol h2 {
+	font-size: 24px;
+	margin: 12px auto;
+}
+
+.score {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	width: 100%;
+	border: 4px solid #222;
+	border-radius: 5px;
+}
+
+.selection {
+	font-size: 12px;
+	margin: 10px auto;
+}
+
+.detailRow {
+	text-align: center;
+}
+
+#rules {
+	font-size: 24px;
+	margin: 12px auto;
+}
+
+#reset {
+	display: none;
+	border: 4px solid #222;
+	border-radius: 5px;
+	padding: 12px;
+	margin: 24px auto;
+	font-size: 18px;
+	min-width: 200px;
+	background-color: #ddd;
+	align-items: center;
+	justify-content: center;
+}
+
+#reset:hover {
+	cursor: pointer;
+	font-weight: bold;
+	background-color: #fff;
+}
+
+.choiceRow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 24px auto;
+	
+}
+
+.choice {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 120px;
+	width: 120px;
+	margin: 0 12px;
+	border: 4px solid #000;
+	border-radius: 50%;
+	background-color: #ddd;
+}
+
+.choice img {
+	width: auto;
+	height: 80%;
+}
+
+.choice:hover {
+	cursor: pointer;
+	background-color: #fff;
+}
